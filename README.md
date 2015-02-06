@@ -8,7 +8,7 @@ $ gradle jmh
 $ java -jar build/libs/jmh-gradle-sample-0.0.1-benchmarks.jar
 ```
 
-----
+```
 jmh {
    include = 'some regular expression' // include pattern (regular expression) for benchmarks to be executed
    exclude = 'some regular expression' // exclude pattern (regular expression) for benchmarks to be executed
@@ -45,4 +45,4 @@ jmh {
    jmhVersion = 1.3.2 // Specifies JMH version
    includeTests = false // Allows to include test sources into generate JMH jar, i.e. use it when benchmarks depend on the test classes.
 }
-----
+```
