@@ -1,0 +1,35 @@
+apply plugin: 'java'
+
+
+group = 'club.kb640.sample'
+version = '1.0-SNAPSHOT'
+
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'me.champeau.gradle:jmh-gradle-plugin:0.1.3'
+    }
+}
+
+
+repositories {
+    jcenter() // repository from which JMH will be downloaded
+}
+
+apply plugin: 'me.champeau.gradle.jmh'
+
+dependencies {
+    jmh 'commons-io:commons-io:2.4'
+}
+
+jmh {
+    include = '.AddToEndIntegerArrayVsLinkedBenchmark.*'
+//    jmhVersion = '1.3.2'
+}
